@@ -1,10 +1,14 @@
+
+
 public class Student {
     private String id;
     private String name;
     private String phone;
 
-    public Student(String id, String name, String phone) {
-        this.id = id;
+    public Student() {
+    }
+
+    public Student(String name, String phone) {
         this.name = name;
         this.phone = phone;
     }
@@ -35,10 +39,9 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "Student " +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
+                ", phone='" + phone + '\'';
     }
 }
