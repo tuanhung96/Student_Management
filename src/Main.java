@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class Main {
             System.out.println("2. Get student");
             System.out.println("3. Update student");
             System.out.println("4. Delete student");
+            System.out.println("5. Save to a file");
             System.out.println("0. Exit");
             System.out.print("Choose command: ");
 
@@ -104,6 +106,17 @@ public class Main {
                         }
                     }
                     if (!validIdDelete) System.out.println("Invalid Id!");
+                    break;
+
+                case "5":
+                    try(FileWriter file = new FileWriter("student.txt")) {
+                        for (Student student: students) {
+                            file.write(student.getId() + "," + student.getName() + "," + student.getPhone() + "\n");
+                        }
+                        System.out.println("Write to file successfully");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 default:
